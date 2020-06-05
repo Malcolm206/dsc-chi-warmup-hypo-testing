@@ -1,3 +1,7 @@
+# Z-test warmup!
+
+do you have what it takes
+
 ## Imports
 
 
@@ -22,6 +26,8 @@ from test_background import load_test_dict as load
 ```python
 #your code here
 ```
+
+![](viz/seattle.gif)
 
 #### For purposes of this problem, let's say we know this dataset represents the entirety of city employees from Seattle
 
@@ -104,6 +110,36 @@ pop_mean = #your code here
 pop_std = #your code here
 ```
 
+
+```python
+#run this cell to check b_last_sample
+run_test(b_last_sample, 'b_last_sample')
+```
+
+
+```python
+#run this cell to check b_last_sample_mean
+run_test(b_last_sample_mean, 'b_last_sample_mean')
+```
+
+
+```python
+#run this cell to check pop_mean
+run_test(pop_mean, 'pop_mean')
+```
+
+
+```python
+#run this cell to check pop_std
+run_test(pop_std, 'pop_std')
+```
+
+
+```python
+#run this cell to check sample_size
+run_test(sample_size, 'sample_size')
+```
+
 ### Test statistic calculation
 
 - Calculate the specific test statistic you determined was appropriate above
@@ -113,6 +149,12 @@ pop_std = #your code here
 
 ```python
 #your code here
+```
+
+
+```python
+#run this cell to check test_stat
+run_test(test_stat, 'test_stat')
 ```
 
 ## The MOMENT OF TRUTH
