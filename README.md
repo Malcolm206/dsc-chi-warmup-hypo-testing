@@ -1,3 +1,7 @@
+# Z-test warmup!
+
+do you have what it takes
+
 ## Imports
 
 
@@ -58,55 +62,57 @@ df.sample(5, axis=0)
   </thead>
   <tbody>
     <tr>
-      <td>657</td>
-      <td>657</td>
-      <td>Police Department</td>
-      <td>Barnes</td>
-      <td>Hope</td>
-      <td>Admin Spec II-BU</td>
-      <td>28.110</td>
+      <td>3762</td>
+      <td>3762</td>
+      <td>Seattle City Light</td>
+      <td>Gansz</td>
+      <td>Bambi</td>
+      <td>Mat Handling Supv,General-BU</td>
+      <td>42.000</td>
     </tr>
     <tr>
-      <td>1078</td>
-      <td>1078</td>
-      <td>Police Department</td>
-      <td>Boettcher</td>
-      <td>David</td>
-      <td>Pol Ofcr-BWV</td>
-      <td>45.960</td>
-    </tr>
-    <tr>
-      <td>11317</td>
-      <td>11317</td>
+      <td>6857</td>
+      <td>6857</td>
       <td>Seattle Public Utilities</td>
-      <td>Waldron</td>
-      <td>Jerry</td>
-      <td>Manager3,Engrng&amp;Plans Rev</td>
-      <td>72.867</td>
+      <td>Mantchev</td>
+      <td>Eugene</td>
+      <td>StratAdvsr2,Engrng&amp;Plans Rev</td>
+      <td>62.670</td>
     </tr>
     <tr>
-      <td>2440</td>
-      <td>2440</td>
-      <td>Seattle Public Utilities</td>
-      <td>Currie II</td>
-      <td>Phillip</td>
-      <td>Envrnmtl Fld Spec</td>
-      <td>38.160</td>
+      <td>9553</td>
+      <td>9553</td>
+      <td>Human Services Department</td>
+      <td>Santor</td>
+      <td>Samantha</td>
+      <td>Manager2,Human Svcs</td>
+      <td>54.583</td>
     </tr>
     <tr>
-      <td>841</td>
-      <td>841</td>
+      <td>8801</td>
+      <td>8801</td>
+      <td>Seattle Center</td>
+      <td>Price</td>
+      <td>Qiao-Ai</td>
+      <td>Janitor-SC/Parks/SPU</td>
+      <td>23.280</td>
+    </tr>
+    <tr>
+      <td>1430</td>
+      <td>1430</td>
       <td>Seattle Dept of Transportation</td>
-      <td>Bell</td>
-      <td>Kadie</td>
-      <td>Transp Plnr,Sr</td>
-      <td>49.710</td>
+      <td>Buchholz</td>
+      <td>Bow</td>
+      <td>Bridge Maint Mechanic</td>
+      <td>40.100</td>
     </tr>
   </tbody>
 </table>
 </div>
 
 
+
+![](viz/seattle.gif)
 
 #### For purposes of this problem, let's say we know this dataset represents the entirety of city employees from Seattle
 
@@ -200,6 +206,32 @@ sample mean was higher than the population mean?  Lower?)
 ''')
 ```
 
+    
+    Since we know:
+    
+    - the population standard deviation
+    
+    - the size of our sample is greater than 30
+    
+    - we are comparing the sample mean to the population mean
+    
+    we are going to run a one-sample z-test.
+    
+    (If we didn't know either parameter or our sample size was <30,  
+    we would use a t-test)
+    
+    Since we want to know:
+    
+    - if the sample mean is *different* from the population mean
+    
+    we are running a two-tailed test.
+    
+    (How would this be different if we just wanted to know if the
+    sample mean was higher than the population mean?  Lower?)
+    
+    
+
+
 #### We'll use an alpha of .05 as the cutoff for significance
 
 #### Using that value of alpha, what is the value of the critical test statistic(s) we will compare our calculated test statistic against?
@@ -271,6 +303,15 @@ pop_mean = df['hourly_rate'].mean()
 pop_std = df['hourly_rate'].std()
 
 sample_size = len(b_last_sample)
+
+# #used for tests
+# pkl_dump([
+#     (b_last_sample, 'b_last_sample'),
+#     (b_last_sample_mean, 'b_last_sample_mean'),
+#     (pop_mean, 'pop_mean'),
+#     (pop_std, 'pop_std'),
+#     (sample_size, 'sample_size')
+# ])
 ```
 
 ### Test statistic calculation
@@ -287,6 +328,11 @@ test_stat = (
     /
     (pop_std/np.sqrt(sample_size))
 )
+
+# #used for tests
+# pkl_dump([
+#     (test_stat, 'test_stat'),
+# ])
 
 test_stat
 ```
