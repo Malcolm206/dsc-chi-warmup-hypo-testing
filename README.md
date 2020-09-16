@@ -132,7 +132,7 @@ but we have to sample to find more-granular data about people whose last name be
 
 ### Hypothesis Generation
 
-What are the null and alternative hypotheses?  (Jake, we will single you out at standup and ask what your hypotheses are)
+What are the null and alternative hypotheses?
 
 
 ```python
